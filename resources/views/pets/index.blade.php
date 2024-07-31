@@ -31,7 +31,7 @@
     <ul>
         @foreach($pets as $pet)
             <li>
-                {{ $pet['name'] }} - {{ $pet['status'] }}
+                {{ $pet['name'] ?? 'Unnamed Pet' }} - {{ $pet['status'] ?? 'Unknown Status' }}
                 <a href="/pets/{{ $pet['id'] }}">View</a>
                 <form action="/pets/{{ $pet['id'] }}" method="POST" style="display:inline;">
                     @csrf
